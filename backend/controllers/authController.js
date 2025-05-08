@@ -1,3 +1,6 @@
+// Controllers hold the actual logic of what happens when someone calls a route.
+// this case: handle authentication logic routes
+
 const jwt = require("jsonwebtoken");
 const User = require('../models/User')
 
@@ -73,12 +76,13 @@ exports.loginUser = async (req, res) => {
 exports.getUserInfo = async (req, res) => {
 
     try{
+        // 1. Find the user
         const user = await User.findById(req.user.id).select("-password");
-
+        // 2. Check if a user exsits
         if(!user){
             return res.status(404).json({message: "User not found"})
         }
-
+        // 3. return user
         res.status(200).json(user);
     }catch(err){
         res.status(500).json({message: "Error finding user: ", Error: err.message})

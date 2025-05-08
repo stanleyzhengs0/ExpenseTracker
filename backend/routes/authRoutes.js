@@ -1,3 +1,6 @@
+// Routes define what should happen when a specific URL is accessed, Ex: /login, /
+
+// Define routes in the routes folder, handle the logic within the controllers
 const express = require('express');
 const {protect} = require("../middleware/authMiddleware")
 const {

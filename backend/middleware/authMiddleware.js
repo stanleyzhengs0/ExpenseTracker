@@ -1,3 +1,5 @@
+// Middleware functions are like tools or processes that run before your actual route logic 
+
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 
