@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { HiOutlineX, HiOutlineMenu } from 'react-icons/hi'
 import SideMenu from './SideMenu'
-const Navbar = () => {
+const Navbar = ({activeMenu}) => {
     const [openSideMenu, setOpenSideMenu] = useState(false)
 
   return (
@@ -25,9 +25,10 @@ const Navbar = () => {
       {openSideMenu && (
         <div className='fixed top-[61px] -ml-4 bg-white'>
           <SideMenu activeMenu={activeMenu}/>
-
+  
         </div>
       )}
+
     </div>
   )
 }
