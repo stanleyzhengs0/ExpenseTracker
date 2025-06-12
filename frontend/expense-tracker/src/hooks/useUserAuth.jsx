@@ -5,7 +5,7 @@ import axiosInstance from "../utils/axiosInstance"
 import { API_PATHS } from "../utils/apiPaths"
 
 export const useUserAuth = () => {
-    const {user, updateuser, clearUser} = useContext(UserContext)
+    const {user, updateUser, clearUser} = useContext(UserContext)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export const useUserAuth = () => {
                 const response = await axiosInstance.get(API_PATHS.AUTH.GET_USER_INFO)
 
                 if(isMounted && response.data){
-                    updateuser(response.data)
+                    updateUser(response.data)
                 }
 
             }catch(error){
@@ -35,6 +35,6 @@ export const useUserAuth = () => {
         return () =>{
             isMounted = false
         }
-    }, [updateuser, clearUser, navigate])
+    }, [updateUser, clearUser, navigate])
     
 }

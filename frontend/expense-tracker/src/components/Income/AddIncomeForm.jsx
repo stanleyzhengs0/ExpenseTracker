@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Input from '../Inputs/Input'
 
-const AddIncomeForm = ({handleAddIncome}) => {
+const AddIncomeForm = ({onAddIncome}) => {
 
     const [ income, setIncome ] = useState({
         source: "",
@@ -41,7 +41,7 @@ const AddIncomeForm = ({handleAddIncome}) => {
             <buttom
                 type="button"
                 className="add-btn add-btn-fill"
-                onClick={()=>onAddIncome(income)}
+                onClick={() => onAddIncome(income)}
             >
                 Add Income
             </buttom>

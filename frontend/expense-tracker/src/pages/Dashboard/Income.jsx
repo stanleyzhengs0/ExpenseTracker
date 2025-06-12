@@ -63,7 +63,7 @@ const Income = () => {
         icon,
       })
 
-      setOpenAddIncomeModal(flase)
+      setOpenAddIncomeModal(false)
       toast.success("Income added successfully")
       fetchIncomeDetails()
 

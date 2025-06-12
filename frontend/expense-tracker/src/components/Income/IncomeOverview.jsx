@@ -3,6 +3,8 @@ import { prepareIncomeBarChartData } from '../../utils/helper'
 import { LuPlus } from 'react-icons/lu'
 import CustomBarChart from "../Charts/CustomBarChart"
 
+
+// BarChart not refreshing after Income add
 const IncomeOverview = ({transactions, onAddIncome}) => {
 
     const [chartData, setChartData] = useState([])
