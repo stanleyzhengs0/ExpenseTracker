@@ -12,7 +12,8 @@ const TransactionInfoCard = ({
     date,
     amount,
     type,
-    hideDeleteBtn
+    hideDeleteBtn,
+    onDelete
 }) => {
 
     const getAmountStyle = () => 
@@ -43,17 +44,15 @@ const TransactionInfoCard = ({
                         <LuTrash2 size={18}/>
                     </button>
                 )}
-            </div>
 
-            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md ${getAmountStyle() }`}>
-                <h6 className='text-xs font-medium'>
-                    {type === "income" ? "+" : "-"} ${amount}
-                </h6>
-                {type === "income" ? <LuTrendingUp/> : <LuTrendingDown/>}
+                <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md ${getAmountStyle() }`}>
+                    <h6 className='text-xs font-medium'>
+                        {type === "income" ? "+" : "-"} ${amount}
+                    </h6>
+                    {type === "income" ? <LuTrendingUp/> : <LuTrendingDown/>}
+                </div>
             </div>
-           
         </div>
-      
     </div>
   )
 }
