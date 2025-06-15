@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import { useUserAuth } from '../../hooks/useUserAuth'
 import { API_PATHS } from '../../utils/apiPaths'
+import ExpenseOverview from '../../components/Expense/ExpenseOverview'
+import axiosInstance from '../../utils/axiosInstance'
 
 const Expense = () => {
   useUserAuth()
@@ -83,7 +85,16 @@ const Expense = () => {
 
   return (
     <DashboardLayout activeMenu="Expense">
-      <div>expense</div>
+      <div>
+          <div>
+            <div>
+                <ExpenseOverview
+                  transactions={expenseData}
+                  onExpenseIncome={() => setOpenAddExpenseModal(true)}
+                />
+            </div>
+        </div>
+      </div>
     </DashboardLayout>
   )
 }
